@@ -1,18 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flames App</title>
-    <link rel="icon" type="image/x-icon" href="favicon.svg">
+    <title>Lumera — Gen-Z Tech Innovation Studio</title>
+    <meta name="description" content="Lumera is a Gen-Z tech innovation studio. We build SaaS, web & mobile apps, and automation with bold design and speed." />
+    <meta name="theme-color" content="#0ea5e9" />
+    <meta name="robots" content="index,follow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-mono/style.css">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Lumera — Gen-Z Tech Innovation Studio" />
+    <meta property="og:description" content="We craft products with speed, sharp UX, and automation-first thinking." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/og.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Lumera",
+      "url": "/",
+      "logo": "/favicon.svg",
+      "sameAs": ["https://www.linkedin.com/", "https://twitter.com/"]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // simple analytics hook: track CTA clicks
+      window.addEventListener('click', (e) => {
+        const t = e.target.closest('a,button')
+        if (!t) return
+        if (t.textContent && /get started|contact|chat|subscribe|send|whatsapp/i.test(t.textContent)) {
+          console.log('[analytics] CTA click:', t.textContent.trim())
+        }
+      })
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
